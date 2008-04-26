@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<TSX edition="Java Edition" product="Tom Sawyer Visualization" version="6.0.1">
+    <graphManager id="3">
+        <resources>
+            <shapes>
+                <rectangleShape id="0"/>
+            </shapes>
+            <fonts>
+                <font id="1">
+                    <name value="SansSerif"/>
+                    <bold value="false"/>
+                    <italic value="false"/>
+                    <fontHeight value="10"/>
+                </font>
+                <font id="2">
+                    <name value="SansSerif"/>
+                    <bold value="true"/>
+                    <italic value="false"/>
+                    <fontHeight value="12"/>
+                </font>
+            </fonts>
+        </resources>
+        <instances>
+            <graphs>
+                <graph id="4">
+                    <name/>
+                    <nodes>
+                        <node id="5">
+                            <name/>
+                            <center x="-277.54217089892575" y="128.97539286524"/>
+                            <size height="95.0" width="55.0"/>
+                            <originalSize height="95.0" width="55.0"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="1"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.DA2DFAF2-A4B0-F8DA-9D02-647F78EFEA00"/>
+                            </graphics>
+                        </node>
+                        <node id="6">
+                            <name value="Generate Menu"/>
+                            <center x="-126.01436814516603" y="-126.11960362532677"/>
+                            <size height="59.99999999999997" width="181.0"/>
+                            <originalSize height="57.411556734440424" width="179.5415956058864"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="2"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.915D6EEA-53A6-A49B-CBD2-CD9ED431F0B8"/>
+                            </graphics>
+                        </node>
+                        <node id="7">
+                            <name value="Log Meal"/>
+                            <center x="-82.67589642542143" y="202.94596650369752"/>
+                            <size height="59.99999999999994" width="89.99999999999994"/>
+                            <originalSize height="60.0" width="90.0"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="2"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.DD7BBBBF-0E90-B8CD-F72B-3AB1C2CA38FD"/>
+                            </graphics>
+                        </node>
+                        <node id="8">
+                            <name value="Manage Meal"/>
+                            <center x="-92.47069772795038" y="307.76503449190193"/>
+                            <size height="60.0" width="174.0"/>
+                            <originalSize height="60.0" width="174.0"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="2"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.C363F951-36C4-F773-735A-4D57E5909F8C"/>
+                            </graphics>
+                        </node>
+                        <node id="9">
+                            <name value="View Available Meals"/>
+                            <center x="-62.27892402837483" y="97.81482793237205"/>
+                            <size height="60.0" width="166.0"/>
+                            <originalSize height="60.0" width="166.00000000000003"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="2"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.EAE41CFF-1409-334C-6CC1-7972738E52A5"/>
+                            </graphics>
+                        </node>
+                        <node id="10">
+                            <name value="Weekly Menu"/>
+                            <center x="100.19363350433775" y="-18.476648694532628"/>
+                            <size height="60.0" width="139.0"/>
+                            <originalSize height="57.41155673444041" width="136.74388967657626"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="2"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.3A9E962A-BFBB-BA82-C93B-B21D57F339EA"/>
+                            </graphics>
+                        </node>
+                        <node id="11">
+                            <name value="Monthly Menu"/>
+                            <center x="100.2078063434202" y="-161.3602661127726"/>
+                            <size height="60.0" width="164.0"/>
+                            <originalSize height="57.41155673444041" width="161.79620534251399"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="2"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.5044AFD0-8254-85D5-3BB6-25DB22A753A0"/>
+                            </graphics>
+                        </node>
+                    </nodes>
+                    <edges>
+                        <edge id="12" source="5" target="6">
+                            <sourceClipping/>
+                            <targetClipping/>
+                            <url/>
+                            <visible value="true"/>
+                            <graphics type="relationEdge">
+                                <lineColor value="0 0 0"/>
+                                <arrowWidth value="6.0"/>
+                                <arrowHeight value="6.0"/>
+                                <arrowType value="NO_ARROW"/>
+                                <bendWidth value="5.0"/>
+                                <bendHeight value="5.0"/>
+                                <antiAliasing value="false"/>
+                                <PEID value="DCE.F90AD6D6-3E64-2E7C-43C5-F516769E3196"/>
+                            </graphics>
+                        </edge>
+                        <edge id="13" source="6" target="10">
+                            <sourceClipping/>
+                            <targetClipping/>
+                            <url/>
+                            <visible value="true"/>
+                            <graphics type="relationEdge">
+                                <lineColor value="0 0 0"/>
+                                <arrowWidth value="6.0"/>
+                                <arrowHeight value="6.0"/>
+                                <arrowType value="NO_ARROW"/>
+                                <bendWidth value="5.0"/>
+                                <bendHeight value="5.0"/>
+                                <antiAliasing value="false"/>
+                                <PEID value="DCE.69F58053-E9FF-08FF-0B39-C9A130A5628F"/>
+                            </graphics>
+                        </edge>
+                        <edge id="14" source="6" target="11">
+                            <sourceClipping/>
+                            <targetClipping/>
+                            <url/>
+                            <visible value="true"/>
+                            <graphics type="relationEdge">
+                                <lineColor value="0 0 0"/>
+                                <arrowWidth value="6.0"/>
+                                <arrowHeight value="6.0"/>
+                                <arrowType value="NO_ARROW"/>
+                                <bendWidth value="5.0"/>
+                                <bendHeight value="5.0"/>
+                                <antiAliasing value="false"/>
+                                <PEID value="DCE.6D48FA57-20EE-DC07-11EF-BBF2F82A9050"/>
+                            </graphics>
+                        </edge>
+                        <edge id="15" source="5" target="7">
+                            <sourceClipping/>
+                            <targetClipping/>
+                            <url/>
+                            <visible value="true"/>
+                            <graphics type="relationEdge">
+                                <lineColor value="0 0 0"/>
+                                <arrowWidth value="6.0"/>
+                                <arrowHeight value="6.0"/>
+                                <arrowType value="NO_ARROW"/>
+                                <bendWidth value="5.0"/>
+                                <bendHeight value="5.0"/>
+                                <antiAliasing value="false"/>
+                                <PEID value="DCE.95657322-300C-40CF-595D-377036455AFC"/>
+                            </graphics>
+                        </edge>
+                        <edge id="16" source="5" target="8">
+                            <sourceClipping/>
+                            <targetClipping/>
+                            <url/>
+                            <visible value="true"/>
+                            <graphics type="relationEdge">
+                                <lineColor value="0 0 0"/>
+                                <arrowWidth value="6.0"/>
+                                <arrowHeight value="6.0"/>
+                                <arrowType value="NO_ARROW"/>
+                                <bendWidth value="5.0"/>
+                                <bendHeight value="5.0"/>
+                                <antiAliasing value="false"/>
+                                <PEID value="DCE.A98DDC99-6C2E-5D38-AB80-B3CE2EDDBC8E"/>
+                            </graphics>
+                        </edge>
+                        <edge id="17" source="5" target="9">
+                            <sourceClipping/>
+                            <targetClipping/>
+                            <url/>
+                            <visible value="true"/>
+                            <graphics type="relationEdge">
+                                <lineColor value="0 0 0"/>
+                                <arrowWidth value="6.0"/>
+                                <arrowHeight value="6.0"/>
+                                <arrowType value="NO_ARROW"/>
+                                <bendWidth value="5.0"/>
+                                <bendHeight value="5.0"/>
+                                <antiAliasing value="false"/>
+                                <PEID value="DCE.0DF09E7E-77BA-B101-584D-434E134CDCB9"/>
+                            </graphics>
+                        </edge>
+                    </edges>
+                    <margins>
+                        <proportional bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+                        <constant bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </margins>
+                    <url/>
+                    <graphics type="basicGraph">
+                        <backgroundColor value="255 255 255"/>
+                        <imageUsed/>
+                        <imageTiled value="false"/>
+                        <imageStyle value="WORLD_OFFSET"/>
+                        <imageMinTileStep value="25"/>
+                        <imageX value="0.0"/>
+                        <imageY value="0.0"/>
+                        <drawNodesBeforeEdges value="true"/>
+                    </graphics>
+                </graph>
+            </graphs>
+            <rootGraph value="4"/>
+        </instances>
+    </graphManager>
+    <serviceInput type="jlayout">
+        <defaults>
+            <optionDefaults type="connector">
+                <optionDefault name="all:all:connector:movable" value="false"/>
+            </optionDefaults>
+            <optionDefaults type="edge">
+                <optionDefault name="all:all:edge:sourceAttachmentSide" value="ATTACHMENT_SIDE_ANY"/>
+                <optionDefault name="layout:all:edge:embedded" value="true"/>
+                <optionDefault name="all:all:edge:targetAttachmentSide" value="ATTACHMENT_SIDE_ANY"/>
+                <optionDefault name="layout:symmetric:edge:desiredLength" value="1.0"/>
+            </optionDefaults>
+            <optionDefaults type="node">
+                <optionDefault name="routing:all:node:fixedPosition" value="false"/>
+                <optionDefault name="routing:all:node:fixedSize" value="false"/>
+                <optionDefault name="all:all:node:attachmentSide" value="ATTACHMENT_SIDE_ANY"/>
+                <optionDefault name="layout:all:node:embedded" value="true"/>
+                <optionDefault name="layout:symmetric:node:constrained" value="false"/>
+            </optionDefaults>
+            <optionDefaults type="edgeLabel">
+                <optionDefault name="labeling:all:edgeLabel:fixed" value="false"/>
+                <optionDefault name="labeling:all:edgeLabel:association" value="EDGE_LABEL_ASSOCIATION_CENTER"/>
+                <optionDefault name="labeling:all:edgeLabel:region" value="EDGE_LABEL_REGION_ANY"/>
+            </optionDefaults>
+            <optionDefaults type="graph">
+                <optionDefault name="layout:all:graph:incrementalCompaction" value="true"/>
+                <optionDefault name="layout:orthogonal:graph:verticalSpacingBetweenNodes" value="20.0"/>
+                <optionDefault name="layout:orthogonal:graph:keepNodeSizes" value="false"/>
+                <optionDefault name="layout:hierarchical:graph:levelAlignment" value="CENTER_ALIGNED"/>
+                <optionDefault name="layout:all:graph:disconnectedNodesConstantSpacing" value="20.0"/>
+                <optionDefault name="layout:hierarchical:graph:undirected" value="false"/>
+                <optionDefault name="layout:hierarchical:graph:horizontalSpacingBetweenEdges" value="12.0"/>
+                <optionDefault name="layout:hierarchical:graph:proportionalHorizontalSpacingBetweenNodes" value="0.1"/>
+                <optionDefault name="layout:all:graph:componentProportionalSpacing" value="0.05"/>
+                <optionDefault name="layout:hierarchical:graph:variableLevelSpacing" value="true"/>
+                <optionDefault name="layout:all:graph:componentAspectRatio" value="1.0"/>
+                <optionDefault name="layout:orthogonal:graph:horizontalSpacingBetweenNodes" value="20.0"/>
+                <optionDefault name="layout:hierarchical:graph:levelDirection" value="DIRECTION_TOP_TO_BOTTOM"/>
+                <optionDefault name="layout:hierarchical:graph:verticalSpacingBetweenEdges" value="12.0"/>
+                <optionDefault name="layout:hierarchical:graph:constantHorizontalSpacingBetweenNodes" value="20.0"/>
+                <optionDefault name="layout:orthogonal:graph:aspectRatio" value="0.0"/>
+                <optionDefault name="layout:orthogonal:graph:verticalSpacingBetweenEdges" value="12.0"/>
+                <optionDefault name="layout:all:graph:disconnectedNodesProportionalSpacing" value="0.05"/>
+                <optionDefault name="layout:symmetric:graph:nodeSpacing" value="10.0"/>
+                <optionDefault name="layout:all:graph:componentConstantSpacing" value="20.0"/>
+                <optionDefault name="layout:all:graph:layoutStyle" value="LAYOUT_STYLE_HIERARCHICAL"/>
+                <optionDefault name="layout:hierarchical:graph:constantVerticalSpacingBetweenNodes" value="20.0"/>
+                <optionDefault name="layout:orthogonal:graph:horizontalSpacingBetweenEdges" value="12.0"/>
+                <optionDefault name="layout:all:graph:detectDisconnectedNodes" value="true"/>
+                <optionDefault name="layout:hierarchical:graph:quality" value="LAYOUT_QUALITY_MEDIUM"/>
+                <optionDefault name="layout:orthogonal:graph:strictIncremental" value="false"/>
+                <optionDefault name="layout:symmetric:graph:randomSeed" value="1"/>
+                <optionDefault name="layout:hierarchical:graph:keepNodeSizes" value="false"/>
+                <optionDefault name="layout:hierarchical:graph:orthogonalRouting" value="false"/>
+                <optionDefault name="layout:symmetric:graph:quality" value="LAYOUT_QUALITY_MEDIUM"/>
+                <optionDefault name="layout:orthogonal:graph:quality" value="LAYOUT_QUALITY_MEDIUM"/>
+                <optionDefault name="layout:all:graph:detectComponents" value="true"/>
+                <optionDefault name="layout:orthogonal:graph:useCombLabeling" value="true"/>
+                <optionDefault name="layout:hierarchical:graph:proportionalVerticalSpacingBetweenNodes" value="0.1"/>
+                <optionDefault name="layout:hierarchical:graph:edgeSpacing" value="12.0"/>
+            </optionDefaults>
+            <optionDefaults type="connectorLabel">
+                <optionDefault name="labeling:all:connectorLabel:fixed" value="false"/>
+                <optionDefault name="labeling:all:connectorLabel:region" value="CONNECTOR_LABEL_REGION_ANY"/>
+            </optionDefaults>
+            <optionDefaults type="nodeLabel">
+                <optionDefault name="labeling:all:nodeLabel:region" value="NODE_LABEL_REGION_ANY"/>
+                <optionDefault name="labeling:all:nodeLabel:location" value="NODE_LABEL_LOCATION_CENTER"/>
+                <optionDefault name="labeling:all:nodeLabel:orientation" value="NODE_LABEL_ORIENTATION_OUTSIDE"/>
+                <optionDefault name="labeling:all:nodeLabel:fixed" value="false"/>
+            </optionDefaults>
+            <optionDefaults type="graphManager">
+                <optionDefault name="routing:all:graphManager:fixedPosition" value="true"/>
+                <optionDefault name="routing:all:graphManager:horizontalSpacingBetweenEdges" value="12.0"/>
+                <optionDefault name="routing:all:graphManager:verticalSpacingBetweenNodes" value="20.0"/>
+                <optionDefault name="layout:all:graphManager:incrementalLayout" value="false"/>
+                <optionDefault name="layout:all:graphManager:horizontalSpacingBetweenIntergraphEdges" value="12.0"/>
+                <optionDefault name="all:all:graphManager:performLabeling" value="true"/>
+                <optionDefault name="routing:all:graphManager:verticalSpacingBetweenEdges" value="12.0"/>
+                <optionDefault name="routing:all:graphManager:horizontalSpacingBetweenNodes" value="20.0"/>
+                <optionDefault name="layout:all:graphManager:verticalSpacingBetweenIntergraphEdges" value="12.0"/>
+                <optionDefault name="routing:all:graphManager:fixedSize" value="true"/>
+            </optionDefaults>
+        </defaults>
+        <option context="none" name="all:all:none:graphManager" value="3"/>
+        <option context="4" name="layout:all:graph:layoutStyle" value="LAYOUT_STYLE_SYMMETRIC"/>
+        <option context="3" name="layout:all:graphManager:incrementalLayout" value="true"/>
+        <option context="4" name="layout:hierarchical:graph:levelDirection" value="DIRECTION_BOTTOM_TO_TOP"/>
+    </serviceInput>
+    <preferences>
+        <preference name="maximumZoomLevel" value="50.0"/>
+        <preference name="interactiveZoomSensitivity" value="200.0"/>
+        <preference name="panningSensitivity" value="1.0"/>
+        <preference name="preventResizeInversion" value="false"/>
+        <preference name="drawInvisibleOnDragging" value="false"/>
+        <preference name="compressMetaEdges" value="true"/>
+        <preference name="edgeNavigationTripDuration" value="300"/>
+        <preference name="edgeNavigationFrameCount" value="10"/>
+        <preference name="autoHideScrollbars" value="true"/>
+        <preference name="hitToleranceThreshold" value="10"/>
+        <preference name="opaqueMovement" value="false"/>
+        <preference name="geometricAdjustment" value="true"/>
+        <preference name="reconnectEdgeSensitivity" value="10.0"/>
+        <preference name="edgeNavigationBlinkDuration" value="500"/>
+        <preference name="undoStackSize" value="50"/>
+        <preference name="minimumZoomLevel" value="1.0E-4"/>
+        <preference name="inPlaceEditing" value="true"/>
+        <preference name="tooltipsEnabled" value="true"/>
+        <preference name="hitTolerance" value="5"/>
+        <preference name="partialSelection" value="true"/>
+    </preferences>
+</TSX>
