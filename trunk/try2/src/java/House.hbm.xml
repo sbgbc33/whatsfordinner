@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="org.wfd.model.House" table="House">
+      <id name="id" column="id">
+          <generator class="native"/>
+      </id>
+      <property name="name"/>
+<!--
+      <list name="meals" table="MEALSUGGESTION">
+        <key column="HOUSEID"/>
+        <list-index column="DISPLAY_POSITION"/>
+        <many-to-many class="Item" column="ITEM_ID" foreign-key="FK_CATEGORY_ITEM_ITEM_ID">
+
+            <filter name="limitItemsByUserRank"
+                    condition=":currentUserRank >=
+                               (select u.RANK from USERS u where u.USER_ID = SELLER_ID)"/>
+
+        </many-to-many>
+    </list>
+    -->
+  </class>
+    
+</hibernate-mapping>
