@@ -1,10 +1,17 @@
 package org.wfd.model;
 
+import java.io.Serializable;
+
 
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.6CC6179E-35F6-C400-9D30-F03D16C9B92D]
 // </editor-fold> 
-public class Meal {
+public class Meal implements Serializable {
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.DAD64520-4957-3CC3-C21C-B319B6131287]
+    // </editor-fold> 
+    private int id;
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.9DA53FE5-9388-90BF-4B5C-2E2A962642E1]
@@ -67,6 +74,20 @@ public class Meal {
     // </editor-fold> 
     public void setBldType (BLDType val) {
         this.bldType = val;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,regenBody=yes,id=DCE.AFE6C06F-EEBD-C15C-8915-F436573A0DB3]
+    // </editor-fold> 
+    public int getId () {
+        return id;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,regenBody=yes,id=DCE.F85B9948-1B54-4B75-7D6F-33AE8B331D34]
+    // </editor-fold> 
+    public void setId (int val) {
+        this.id = val;
     }
 
 }
