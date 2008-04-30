@@ -1,10 +1,12 @@
 package org.wfd.model;
 
+import java.io.Serializable;
+
 
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.6498B47D-F3BD-06DD-7CAB-97D1FF62F5C5]
 // </editor-fold> 
-public class MealSuggestion {
+public class MealSuggestion implements Serializable {
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.1FB99D38-BAD4-5854-3D06-DB88279F7F4D]
