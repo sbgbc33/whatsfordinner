@@ -9,9 +9,5 @@
     <property name="hibernate.connection.password">wfddb</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
-    <mapping resource="newHibernate.hbm.xml"/>
-    <mapping resource="newHibernate.hbm1.xml"/>
-    <mapping resource="meal.hbm.xml"/>
-    <mapping resource="House.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

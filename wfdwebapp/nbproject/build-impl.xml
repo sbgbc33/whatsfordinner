@@ -369,8 +369,12 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
     <!--
                 COMPILATION SECTION
             -->
-    <target depends="init" if="no.dist.ear.dir" name="deps-module-jar" unless="no.deps"/>
-    <target depends="init" if="dist.ear.dir" name="deps-ear-jar" unless="no.deps"/>
+    <target depends="init" if="no.dist.ear.dir" name="deps-module-jar" unless="no.deps">
+        <ant antfile="${project.wfdmodel}/build.xml" inheritall="false" target="jar"/>
+    </target>
+    <target depends="init" if="dist.ear.dir" name="deps-ear-jar" unless="no.deps">
+        <ant antfile="${project.wfdmodel}/build.xml" inheritall="false" target="jar"/>
+    </target>
     <target depends="init, deps-module-jar, deps-ear-jar" name="deps-jar" unless="no.deps"/>
     <target depends="init,deps-jar" name="-pre-pre-compile">
         <mkdir dir="${build.classes.dir}"/>
@@ -531,9 +535,11 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
         <copy-ear-war file="${libs.hibernate-support.classpath.libfile.3}" propname="included.lib.libs.hibernate-support.classpath.3.X"/>
         <copy-ear-war file="${libs.hibernate-support.classpath.libfile.2}" propname="included.lib.libs.hibernate-support.classpath.2.X"/>
         <copy-ear-war file="${libs.hibernate-support.classpath.libfile.1}" propname="included.lib.libs.hibernate-support.classpath.1.X"/>
+        <basename file="${reference.wfdmodel.jar}" property="included.lib.reference.wfdmodel.jar"/>
+        <copy-ear-war file="${reference.wfdmodel.jar}" propname="included.lib.reference.wfdmodel.jar.X"/>
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Class-Path" value="${included.lib.libs.hibernate-support.classpath.1.X} ${included.lib.libs.hibernate-support.classpath.2.X} ${included.lib.libs.hibernate-support.classpath.3.X} ${included.lib.libs.hibernate-support.classpath.4.X} ${included.lib.libs.hibernate-support.classpath.5.X} ${included.lib.libs.hibernate-support.classpath.6.X} ${included.lib.libs.hibernate-support.classpath.7.X} ${included.lib.libs.hibernate-support.classpath.8.X} ${included.lib.libs.hibernate-support.classpath.9.X} ${included.lib.libs.hibernate-support.classpath.10.X} ${included.lib.libs.hibernate-support.classpath.11.X} "/>
+            <attribute name="Class-Path" value="${included.lib.libs.hibernate-support.classpath.1.X} ${included.lib.libs.hibernate-support.classpath.2.X} ${included.lib.libs.hibernate-support.classpath.3.X} ${included.lib.libs.hibernate-support.classpath.4.X} ${included.lib.libs.hibernate-support.classpath.5.X} ${included.lib.libs.hibernate-support.classpath.6.X} ${included.lib.libs.hibernate-support.classpath.7.X} ${included.lib.libs.hibernate-support.classpath.8.X} ${included.lib.libs.hibernate-support.classpath.9.X} ${included.lib.libs.hibernate-support.classpath.10.X} ${included.lib.libs.hibernate-support.classpath.11.X} ${included.lib.reference.wfdmodel.jar} "/>
         </manifest>
         <delete dir="${dist.ear.dir}/temp"/>
     </target>
@@ -549,6 +555,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
         <copy file="${libs.hibernate-support.classpath.libfile.3}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copy file="${libs.hibernate-support.classpath.libfile.2}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copy file="${libs.hibernate-support.classpath.libfile.1}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copy file="${reference.wfdmodel.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist,library-inclusion-in-manifest" name="do-ear-dist">
         <dirname file="${dist.ear.war}" property="dist.jar.dir"/>
@@ -831,7 +838,9 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
                 
                 CLEANUP SECTION
             -->
-    <target depends="init" if="no.dist.ear.dir" name="deps-clean" unless="no.deps"/>
+    <target depends="init" if="no.dist.ear.dir" name="deps-clean" unless="no.deps">
+        <ant antfile="${project.wfdmodel}/build.xml" inheritall="false" target="clean"/>
+    </target>
     <target depends="init" name="do-clean">
         <condition property="build.dir.to.clean" value="${build.web.dir}">
             <isset property="dist.ear.dir"/>
