@@ -1,0 +1,70 @@
+<twitter4j.Twitter serialization="custom">
+  <twitter4j.TwitterBase>
+    <default>
+      <auth class="twitter4j.http.OAuthAuthorization">
+        <conf class="twitter4j.conf.PropertyConfiguration">
+          <debug>false</debug>
+          <source>Twitter4J</source>
+          <userAgent>twitter4j http://twitter4j.org/ /2.1.0</userAgent>
+          <useSSL>true</useSSL>
+          <httpProxyPort>-1</httpProxyPort>
+          <httpConnectionTimeout>20000</httpConnectionTimeout>
+          <httpReadTimeout>120000</httpReadTimeout>
+          <httpStreamingReadTimeout>300000</httpStreamingReadTimeout>
+          <httpRetryCount>0</httpRetryCount>
+          <httpRetryIntervalMilliSecs>5000</httpRetryIntervalMilliSecs>
+          <oAuthConsumerKey>NWdcP87ysZB4zOd6LSpsw</oAuthConsumerKey>
+          <oAuthConsumerSecret>Ec8PoyOf18ABCw8HF9UE0qaurmFYrPD1lJPxkRkni4</oAuthConsumerSecret>
+          <oAuthRequestTokenURL>https://twitter.com/oauth/request_token</oAuthRequestTokenURL>
+          <oAuthAuthorizationURL>https://twitter.com/oauth/authorize</oAuthAuthorizationURL>
+          <oAuthAccessTokenURL>https://twitter.com/oauth/access_token</oAuthAccessTokenURL>
+          <oAuthAuthenticationURL>https://twitter.com/oauth/authenticate</oAuthAuthenticationURL>
+          <restBaseURL>https://api.twitter.com/1/</restBaseURL>
+          <searchBaseURL>http://search.twitter.com/</searchBaseURL>
+          <streamBaseURL>http://stream.twitter.com/1/</streamBaseURL>
+          <asyncNumThreads>1</asyncNumThreads>
+          <clientVersion>2.1.0</clientVersion>
+          <clientURL>http://twitter4j.org/en/twitter4j-2.1.0.xml</clientURL>
+          <IS__DALVIK>false</IS__DALVIK>
+          <requestHeaders>
+            <entry>
+              <string>X-Twitter-Client-URL</string>
+              <string>http://twitter4j.org/en/twitter4j-2.1.0.xml</string>
+            </entry>
+            <entry>
+              <string>X-Twitter-Client</string>
+              <string>Twitter4J</string>
+            </entry>
+            <entry>
+              <string>Accept-Encoding</string>
+              <string>gzip</string>
+            </entry>
+            <entry>
+              <string>User-Agent</string>
+              <string>twitter4j http://twitter4j.org/ /2.1.0</string>
+            </entry>
+            <entry>
+              <string>X-Twitter-Client-Version</string>
+              <string>2.1.0</string>
+            </entry>
+            <entry>
+              <string>Connection</string>
+              <string>close</string>
+            </entry>
+          </requestHeaders>
+        </conf>
+        <consumerKey>NWdcP87ysZB4zOd6LSpsw</consumerKey>
+        <consumerSecret>Ec8PoyOf18ABCw8HF9UE0qaurmFYrPD1lJPxkRkni4</consumerSecret>
+        <oauthToken class="twitter4j.http.AccessToken">
+          <token>110038502-lbSF88LyBCPZfnH6L9lw5RbW04gB3GIYHCAb4t99</token>
+          <tokenSecret>PTbJ4eRXyIf5OTmZVOrxTTFjwxjWNrSupXSQq3R2bRQ</tokenSecret>
+          <userId>0</userId>
+        </oauthToken>
+      </auth>
+      <conf class="twitter4j.conf.PropertyConfiguration" reference="../auth/conf"/>
+    </default>
+  </twitter4j.TwitterBase>
+  <twitter4j.TwitterOAuthSupportBase>
+    <null/>
+  </twitter4j.TwitterOAuthSupportBase>
+</twitter4j.Twitter>

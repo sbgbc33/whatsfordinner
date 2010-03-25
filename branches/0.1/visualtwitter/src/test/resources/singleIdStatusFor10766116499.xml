@@ -1,0 +1,41 @@
+<twitter4j.StatusJSONImpl>
+  <createdAt>2010-03-20 05:23:45.0 EDT</createdAt>
+  <id>10766116499</id>
+  <text>wishes to priyanka &amp; kangana. arjun is a rockstar.so happy to see friends get wot they duly deserve. priyanka IS A SHERO. move over heroes.</text>
+  <source>web</source>
+  <isTruncated>false</isTruncated>
+  <inReplyToStatusId>-1</inReplyToStatusId>
+  <inReplyToUserId>-1</inReplyToUserId>
+  <isFavorited>false</isFavorited>
+  <user class="twitter4j.UserJSONImpl">
+    <id>101311381</id>
+    <name>SHAH RUKH KHAN</name>
+    <screenName>iamsrk</screenName>
+    <location></location>
+    <description></description>
+    <profileImageUrl>http://a1.twimg.com/profile_images/661679664/keep_it_onn_normal.jpg</profileImageUrl>
+    <url>http://twitter.com/iamsrk</url>
+    <isProtected>false</isProtected>
+    <followersCount>218329</followersCount>
+    <statusId>-1</statusId>
+    <statusTruncated>false</statusTruncated>
+    <statusInReplyToStatusId>-1</statusInReplyToStatusId>
+    <statusInReplyToUserId>-1</statusInReplyToUserId>
+    <statusFavorited>false</statusFavorited>
+    <profileBackgroundColor>022330</profileBackgroundColor>
+    <profileTextColor>333333</profileTextColor>
+    <profileLinkColor>0084B4</profileLinkColor>
+    <profileSidebarFillColor>C0DFEC</profileSidebarFillColor>
+    <profileSidebarBorderColor>a8c7f7</profileSidebarBorderColor>
+    <friendsCount>35</friendsCount>
+    <createdAt>2010-01-02 15:55:43.0 EST</createdAt>
+    <favouritesCount>1</favouritesCount>
+    <utcOffset>-32400</utcOffset>
+    <timeZone>Alaska</timeZone>
+    <profileBackgroundImageUrl>http://a1.twimg.com/profile_background_images/82383104/x2_d610a2.jpeg</profileBackgroundImageUrl>
+    <profileBackgroundTiled>true</profileBackgroundTiled>
+    <statusesCount>1073</statusesCount>
+    <isGeoEnabled>false</isGeoEnabled>
+    <isVerified>true</isVerified>
+  </user>
+</twitter4j.StatusJSONImpl>
