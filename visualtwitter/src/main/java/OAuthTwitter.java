@@ -14,7 +14,7 @@ public class OAuthTwitter {
 		// The factory instance is re-useable and thread safe.
 		Twitter twitter = new TwitterFactory().getInstance();
 		// twitter.setOAuthConsumer(System
-		// .ggetProperty("twitter4j.oauth.consumerKey"), System
+		// .getProperty("twitter4j.oauth.consumerKey"), System
 		// .getProperty("twitter4j.oauth.consumerSecret"));
 		RequestToken requestToken = twitter.getOAuthRequestToken();
 		AccessToken accessToken = null;
