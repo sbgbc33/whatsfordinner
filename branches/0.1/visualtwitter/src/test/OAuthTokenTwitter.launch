@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/visualtwitter/src/main/java/OAuthTokenTwitter.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.maven.ide.eclipse.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="OAuthTokenTwitter"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;Hello from Twisualize&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="visualtwitter"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.maven.ide.eclipse.launchconfig.sourcepathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dtwitter4j.oauth.consumerKey=NWdcP87ysZB4zOd6LSpsw&#13;&#10;-Dtwitter4j.oauth.consumerSecret=Ec8PoyOf18ABCw8HF9UE0qaurmFYrPD1lJPxkRkni4&#13;&#10;-Dtoken=110038502-lbSF88LyBCPZfnH6L9lw5RbW04gB3GIYHCAb4t99&#13;&#10;-DtokenSecret=PTbJ4eRXyIf5OTmZVOrxTTFjwxjWNrSupXSQq3R2bRQ"/>
+</launchConfiguration>
