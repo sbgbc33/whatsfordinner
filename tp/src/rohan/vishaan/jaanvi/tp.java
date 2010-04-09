@@ -22,11 +22,13 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -40,8 +42,18 @@ import android.widget.ImageView;
  */
 public class tp extends Activity {
 
-	private static int columnWidth;
-	private static int columnHeight;
+	private static final String TAG = "tp";
+
+	private static int singleImageColumnWidth;
+	private static int singleImageColumnHeight;
+
+	private Config getConfig() {
+		return new Config(4);
+	}
+
+	private Config config;
+
+	private int numberOfColumns;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,12 +69,25 @@ public class tp extends Activity {
 		int screenWidth = dm.widthPixels;
 		int screenHeight = dm.heightPixels;
 
-		columnWidth = screenWidth / 3;
-		columnHeight = screenHeight / 3;
+		Log.v(TAG, "screenWidth = " + screenWidth);
+		Log.v(TAG, "screenHeight = " + screenHeight);
 
-		g.setNumColumns(2);
+		int heightUsedByMenubarAndTitleBar = 80;
+		screenHeight = screenHeight - heightUsedByMenubarAndTitleBar;
 
-		g.setColumnWidth(columnWidth);
+		this.config = getConfig();
+
+		numberOfColumns = 2;
+
+		singleImageColumnWidth = screenWidth / 2;
+		singleImageColumnHeight = screenHeight / 4;
+
+		Log.v(TAG, "singleImageColumnWidth = " + singleImageColumnWidth);
+		Log.v(TAG, "singleImageColumnHeight = " + singleImageColumnHeight);
+
+		g.setNumColumns(numberOfColumns);
+
+		g.setColumnWidth(singleImageColumnWidth);
 		g.setAdapter(new ImageAdapter(this));
 	}
 
@@ -117,12 +142,12 @@ public class tp extends Activity {
 
 		private int matchCount;
 
-		public ImageAdapter(Context c) {
+		public ImageAdapter(tp c) {
 			mContext = c;
 		}
 
 		public int getCount() {
-			return mThumbIds.length;
+			return mContext.config.getHowManyImages() * 2;
 		}
 
 		public Object getItem(int position) {
@@ -138,7 +163,7 @@ public class tp extends Activity {
 			if (convertView == null) {
 				imageView = new MyImageView(mContext);
 				imageView.setLayoutParams(new GridView.LayoutParams(
-						columnWidth, columnHeight));
+						singleImageColumnWidth, singleImageColumnHeight));
 				imageView.setAdjustViewBounds(false);
 				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 				imageView.setPadding(0, 5, 0, 5);
@@ -175,8 +200,9 @@ public class tp extends Activity {
 						iv.setMatched();
 						lastClickOnImage.setMatched();
 						matchCount++;
-						if (matchCount == 2) {
+						if (matchCount == config.getHowManyImages()) {
 							showDialog(DIALOG_YES_NO_MESSAGE);
+							restart();
 						}
 					} else {
 						iv.openCard();
@@ -187,19 +213,36 @@ public class tp extends Activity {
 								iv.closeCard();
 							}
 
-						}, 10000);
+						}, 2100);
 					}
 				}
 			}
 		}
 
-		private final Context mContext;
+		private void restart() {
+			Intent intent = mContext.getIntent();
+			startActivity(intent);
+			// finish();
+		}
+
+		private final tp mContext;
 
 		private final Integer[] mThumbIds = { R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard };
 
 		private final Integer[] mThumbIdsMatch = { R.drawable.jaanvi,
-				R.drawable.vishaan, R.drawable.jaanvi, R.drawable.vishaan };
+				R.drawable.vishaan, R.drawable.jaanvi, R.drawable.vishaan,
+				R.drawable.sample_thumb_4, R.drawable.sample_thumb_4,
+				R.drawable.sample_thumb_7, R.drawable.sample_thumb_7 };
 
 		private final Integer hiddenCardId = R.drawable.facecard;
 		// , R.drawable.sample_thumb_4,
