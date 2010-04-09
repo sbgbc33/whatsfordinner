@@ -107,7 +107,7 @@ public class TimePass extends Activity {
 		}
 
 		public void closeCard() {
-			super.setImageResource(R.drawable.sample_thumb_5);
+			super.setImageResource(R.drawable.facecard);
 		}
 	}
 
@@ -146,7 +146,7 @@ public class TimePass extends Activity {
 				imageView = (MyImageView) convertView;
 			}
 
-			imageView.setImageResource(R.drawable.sample_thumb_5);
+			imageView.setImageResource(R.drawable.facecard);
 			imageView.setOrigImageId(mThumbIdsMatch[position]);
 
 			imageView.setOnClickListener(this);
@@ -187,7 +187,7 @@ public class TimePass extends Activity {
 								iv.closeCard();
 							}
 
-						}, 1000);
+						}, 10000);
 					}
 				}
 			}
@@ -195,93 +195,91 @@ public class TimePass extends Activity {
 
 		private final Context mContext;
 
-		private final Integer[] mThumbIds = { R.drawable.sample_thumb_5,
-				R.drawable.sample_thumb_5, R.drawable.sample_thumb_5,
-				R.drawable.sample_thumb_5 };
+		private final Integer[] mThumbIds = { R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard };
 
-		private final Integer[] mThumbIdsMatch = { R.drawable.sample_thumb_0,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_0,
-				R.drawable.sample_thumb_1 };
+		private final Integer[] mThumbIdsMatch = { R.drawable.jaanvi,
+				R.drawable.vishaan, R.drawable.jaanvi, R.drawable.vishaan };
 
-		private final Integer hiddenCardId = R.drawable.sample_thumb_5;
+		private final Integer hiddenCardId = R.drawable.facecard;
 		// , R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
 		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
 		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.sample_thumb_5, R.drawable.sample_thumb_6,
+		// R.drawable.facecard, R.drawable.sample_thumb_6,
 		// R.drawable.sample_thumb_7, };
 	}
 
