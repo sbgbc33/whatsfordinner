@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, TimePass!</string>
-    <string name="app_name">TimePass</string>
+    <string name="hello">Hello World, tp!</string>
+    <string name="app_name">tp</string>
     
         <string name="tabs_1_tab_1">tab1</string>
     <string name="tabs_1_tab_2">tab2</string>
