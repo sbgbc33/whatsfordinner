@@ -48,7 +48,7 @@ public class tp extends Activity {
 	private static int singleImageColumnHeight;
 
 	private Config getConfig() {
-		return new Config(4);
+		return new Config(25);
 	}
 
 	private Config config;
@@ -72,18 +72,31 @@ public class tp extends Activity {
 		Log.v(TAG, "screenWidth = " + screenWidth);
 		Log.v(TAG, "screenHeight = " + screenHeight);
 
-		int heightUsedByMenubarAndTitleBar = 80;
-		screenHeight = screenHeight - heightUsedByMenubarAndTitleBar;
-
 		this.config = getConfig();
+		int heightUsedByMenubarAndTitleBar = 80;
+		screenHeight -= heightUsedByMenubarAndTitleBar;
 
-		numberOfColumns = 2;
+		int verticalSpacer = 1 * this.config.getHowManyImages();
+		screenHeight -= verticalSpacer;
+		numberOfColumns = 5;
 
-		singleImageColumnWidth = screenWidth / 2;
-		singleImageColumnHeight = screenHeight / 4;
+		g.setBackgroundColor(Color.WHITE);
+		// g.setBackgroundResource(R.drawable.facecard);
+		// g.setPadding(10, 50, 10, 50);
+		screenWidth -= numberOfColumns * 5;
 
-		Log.v(TAG, "singleImageColumnWidth = " + singleImageColumnWidth);
-		Log.v(TAG, "singleImageColumnHeight = " + singleImageColumnHeight);
+		singleImageColumnWidth = screenWidth / numberOfColumns;
+
+		int numberOfRows = this.config.getHowManyImages() * 2 / numberOfColumns;
+
+		singleImageColumnHeight = screenHeight / numberOfRows;
+
+		Log.v(TAG, "singleImageColumnWidth = " + singleImageColumnWidth
+				+ " with " + this.numberOfColumns);
+		Log.v(TAG, "singleImageColumnHeight = " + singleImageColumnHeight
+				+ " with " + this.numberOfColumns);
+		Log.v(TAG, "w/h ration = "
+				+ (singleImageColumnWidth * 1.0 / singleImageColumnHeight));
 
 		g.setNumColumns(numberOfColumns);
 
@@ -237,12 +250,106 @@ public class tp extends Activity {
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
+				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard };
 
 		private final Integer[] mThumbIdsMatch = { R.drawable.jaanvi,
 				R.drawable.vishaan, R.drawable.jaanvi, R.drawable.vishaan,
 				R.drawable.sample_thumb_4, R.drawable.sample_thumb_4,
-				R.drawable.sample_thumb_7, R.drawable.sample_thumb_7 };
+				R.drawable.sample_thumb_7, R.drawable.sample_thumb_7,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
+				R.drawable.sample_thumb_1 };
 
 		private final Integer hiddenCardId = R.drawable.facecard;
 		// , R.drawable.sample_thumb_4,
