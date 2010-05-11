@@ -48,7 +48,7 @@ public class tp extends Activity {
 	private static int singleImageColumnHeight;
 
 	private Config getConfig() {
-		return new Config(4);
+		return new Config(6);
 	}
 
 	private Config config;
@@ -299,10 +299,13 @@ public class tp extends Activity {
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard };
 
-		private final Integer[] mThumbIdsMatch = { R.drawable.jaanvi,
-				R.drawable.vishaan, R.drawable.jaanvi, R.drawable.vishaan,
-				R.drawable.sample_thumb_4, R.drawable.sample_thumb_4,
-				R.drawable.sample_thumb_7, R.drawable.sample_thumb_7,
+		private final Integer[] mThumbIdsMatch = { R.drawable.snuffy,
+				R.drawable.abby, R.drawable.snuffy, R.drawable.abby,
+				R.drawable.elmo, R.drawable.cookie_monster,
+				R.drawable.cookie_monster, R.drawable.elmo, R.drawable.bigbird,
+				R.drawable.bigbird, R.drawable.zoey, R.drawable.zoey,
+				R.drawable.photo2, R.drawable.photo2, R.drawable.photo3,
+				R.drawable.photo3, R.drawable.sample_thumb_1,
 				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
 				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
 				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
@@ -351,12 +354,7 @@ public class tp extends Activity {
 				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
 				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
 				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1 };
+				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1 };
 
 		private final Integer hiddenCardId = R.drawable.facecard;
 		// , R.drawable.sample_thumb_4,
