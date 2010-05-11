@@ -48,7 +48,7 @@ public class tp extends Activity {
 	private static int singleImageColumnHeight;
 
 	private Config getConfig() {
-		return new Config(25);
+		return new Config(4);
 	}
 
 	private Config config;
@@ -78,18 +78,25 @@ public class tp extends Activity {
 
 		int verticalSpacer = 1 * this.config.getHowManyImages();
 		screenHeight -= verticalSpacer;
-		numberOfColumns = 5;
+		// numberOfColumns = 5;
 
 		g.setBackgroundColor(Color.WHITE);
-		// g.setBackgroundResource(R.drawable.facecard);
-		// g.setPadding(10, 50, 10, 50);
 		screenWidth -= numberOfColumns * 5;
 
-		singleImageColumnWidth = screenWidth / numberOfColumns;
+		// singleImageColumnWidth = screenWidth / numberOfColumns;
 
-		int numberOfRows = this.config.getHowManyImages() * 2 / numberOfColumns;
+		int totalNumberOfImagesToShow = this.config.getHowManyImages() * 2;
 
-		singleImageColumnHeight = screenHeight / numberOfRows;
+		// int numberOfRows = totalNumberOfImagesToShow / numberOfColumns;
+
+		// singleImageColumnHeight = screenHeight / numberOfRows;
+
+		Box optimizedSizes = GridUtil.getBoxesPerRow(totalNumberOfImagesToShow,
+				screenWidth, screenHeight);
+
+		singleImageColumnWidth = optimizedSizes.getW();
+		singleImageColumnHeight = optimizedSizes.getH();
+		numberOfColumns = optimizedSizes.getNumberPerRow();
 
 		Log.v(TAG, "singleImageColumnWidth = " + singleImageColumnWidth
 				+ " with " + this.numberOfColumns);
