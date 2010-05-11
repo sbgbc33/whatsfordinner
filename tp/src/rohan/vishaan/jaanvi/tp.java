@@ -37,7 +37,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 /**
- * A grid that displays a set of framed photos.
+ * A grid that displays a set of framed photos. A
  * 
  */
 public class tp extends Activity {
