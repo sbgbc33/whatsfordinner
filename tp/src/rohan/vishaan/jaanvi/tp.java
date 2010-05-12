@@ -396,51 +396,50 @@ public class tp extends Activity {
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case DIALOG_YES_NO_MESSAGE:
-			return new AlertDialog.Builder(this).setIcon(
-					R.drawable.alert_dialog_icon).setTitle(
-					R.string.alert_dialog_two_buttons_title).setPositiveButton(
-					R.string.alert_dialog_ok,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
+			return new AlertDialog.Builder(this).setIcon(R.drawable.frog)
+					.setTitle(R.string.alert_dialog_two_buttons_title)
+					.setPositiveButton(R.string.alert_dialog_ok,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int whichButton) {
 
-							/* User clicked OK so do some stuff */
-						}
-					}).setNegativeButton(R.string.alert_dialog_cancel,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
+									/* User clicked OK so do some stuff */
+								}
+							}).setNegativeButton(R.string.alert_dialog_cancel,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int whichButton) {
 
-							/* User clicked Cancel so do some stuff */
-						}
-					}).create();
+									/* User clicked Cancel so do some stuff */
+								}
+							}).create();
 		case DIALOG_YES_NO_LONG_MESSAGE:
-			return new AlertDialog.Builder(this).setIcon(
-					R.drawable.alert_dialog_icon).setTitle(
-					R.string.alert_dialog_two_buttons_msg).setMessage(
-					R.string.alert_dialog_two_buttons2_msg).setPositiveButton(
-					R.string.alert_dialog_ok,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
+			return new AlertDialog.Builder(this).setIcon(R.drawable.frog)
+					.setTitle(R.string.alert_dialog_two_buttons_msg)
+					.setMessage(R.string.alert_dialog_two_buttons2_msg)
+					.setPositiveButton(R.string.alert_dialog_ok,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int whichButton) {
 
-							/* User clicked OK so do some stuff */
-						}
-					}).setNeutralButton(R.string.alert_dialog_something,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
+									/* User clicked OK so do some stuff */
+								}
+							}).setNeutralButton(
+							R.string.alert_dialog_something,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int whichButton) {
 
-							/* User clicked Something so do some stuff */
-						}
-					}).setNegativeButton(R.string.alert_dialog_cancel,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
+									/* User clicked Something so do some stuff */
+								}
+							}).setNegativeButton(R.string.alert_dialog_cancel,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int whichButton) {
 
-							/* User clicked Cancel so do some stuff */
-						}
-					}).create();
+									/* User clicked Cancel so do some stuff */
+								}
+							}).create();
 			// case DIALOG_LIST:
 			// return new AlertDialog.Builder(this).setTitle(
 			// R.string.select_dialog).setItems(
@@ -459,7 +458,7 @@ public class tp extends Activity {
 			// }).create();
 		case DIALOG_PROGRESS:
 			mProgressDialog = new ProgressDialog(this);
-			mProgressDialog.setIcon(R.drawable.alert_dialog_icon);
+			mProgressDialog.setIcon(R.drawable.frog);
 			mProgressDialog.setTitle(R.string.select_dialog);
 			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 			mProgressDialog.setMax(MAX_PROGRESS);
