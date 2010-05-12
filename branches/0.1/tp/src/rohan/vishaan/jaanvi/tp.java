@@ -108,6 +108,7 @@ public class tp extends Activity {
 		g.setNumColumns(numberOfColumns);
 
 		g.setColumnWidth(singleImageColumnWidth);
+
 		g.setAdapter(new ImageAdapter(this));
 	}
 
@@ -164,6 +165,9 @@ public class tp extends Activity {
 
 		public ImageAdapter(tp c) {
 			mContext = c;
+			ShuffleBoard sf = new ShuffleBoard(picturesToMatch, c.getConfig()
+					.getHowManyImages());
+			mThumbIdsMatch = sf.shuffle();
 		}
 
 		public int getCount() {
@@ -299,62 +303,12 @@ public class tp extends Activity {
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
 				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard };
 
-		private final Integer[] mThumbIdsMatch = { R.drawable.snuffy,
-				R.drawable.abby, R.drawable.snuffy, R.drawable.abby,
-				R.drawable.elmo, R.drawable.cookie_monster,
-				R.drawable.cookie_monster, R.drawable.elmo, R.drawable.bigbird,
-				R.drawable.bigbird, R.drawable.zoey, R.drawable.zoey,
-				R.drawable.photo2, R.drawable.photo2, R.drawable.photo3,
-				R.drawable.photo3, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1,
-				R.drawable.sample_thumb_1, R.drawable.sample_thumb_1 };
+		private final Integer[] mThumbIdsMatch;
+
+		private final Integer[] picturesToMatch = { R.drawable.snuffy,
+				R.drawable.abby, R.drawable.elmo, R.drawable.cookie_monster,
+				R.drawable.bigbird, R.drawable.zoey, R.drawable.photo2,
+				R.drawable.photo3 };
 
 		private final Integer hiddenCardId = R.drawable.facecard;
 		// , R.drawable.sample_thumb_4,
@@ -460,6 +414,150 @@ public class tp extends Activity {
 							/* User clicked Cancel so do some stuff */
 						}
 					}).create();
+		case DIALOG_YES_NO_LONG_MESSAGE:
+			return new AlertDialog.Builder(this).setIcon(
+					R.drawable.alert_dialog_icon).setTitle(
+					R.string.alert_dialog_two_buttons_msg).setMessage(
+					R.string.alert_dialog_two_buttons2_msg).setPositiveButton(
+					R.string.alert_dialog_ok,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							/* User clicked OK so do some stuff */
+						}
+					}).setNeutralButton(R.string.alert_dialog_something,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							/* User clicked Something so do some stuff */
+						}
+					}).setNegativeButton(R.string.alert_dialog_cancel,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							/* User clicked Cancel so do some stuff */
+						}
+					}).create();
+			// case DIALOG_LIST:
+			// return new AlertDialog.Builder(this).setTitle(
+			// R.string.select_dialog).setItems(
+			// R.array.select_dialog_items,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog, int which) {
+			//
+			// /* User clicked so do some stuff */
+			// String[] items = getResources().getStringArray(
+			// R.array.select_dialog_items);
+			// new AlertDialog.Builder(AlertDialogSamples.this)
+			// .setMessage(
+			// "You selected: " + which + " , "
+			// + items[which]).show();
+			// }
+			// }).create();
+		case DIALOG_PROGRESS:
+			mProgressDialog = new ProgressDialog(this);
+			mProgressDialog.setIcon(R.drawable.alert_dialog_icon);
+			mProgressDialog.setTitle(R.string.select_dialog);
+			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			mProgressDialog.setMax(MAX_PROGRESS);
+			mProgressDialog.setButton(getText(R.string.alert_dialog_hide),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							/* User clicked Yes so do some stuff */
+						}
+					});
+			mProgressDialog.setButton2(getText(R.string.alert_dialog_cancel),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							/* User clicked No so do some stuff */
+						}
+					});
+			return mProgressDialog;
+			// case DIALOG_SINGLE_CHOICE:
+			// return new AlertDialog.Builder(this).setIcon(
+			// R.drawable.alert_dialog_icon).setTitle(
+			// R.string.alert_dialog_single_choice).setSingleChoiceItems(
+			// R.array.select_dialog_items2, 0,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked on a radio button do some stuff */
+			// }
+			// }).setPositiveButton(R.string.alert_dialog_ok,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked Yes so do some stuff */
+			// }
+			// }).setNegativeButton(R.string.alert_dialog_cancel,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked No so do some stuff */
+			// }
+			// }).create();
+			// case DIALOG_MULTIPLE_CHOICE:
+			// return new AlertDialog.Builder(AlertDialogSamples.this).setIcon(
+			// R.drawable.ic_popup_reminder).setTitle(
+			// R.string.alert_dialog_multi_choice).setMultiChoiceItems(
+			// R.array.select_dialog_items3,
+			// new boolean[] { false, true, false, true, false, false,
+			// false },
+			// new DialogInterface.OnMultiChoiceClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton, boolean isChecked) {
+			//
+			// /* User clicked on a check box do some stuff */
+			// }
+			// }).setPositiveButton(R.string.alert_dialog_ok,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked Yes so do some stuff */
+			// }
+			// }).setNegativeButton(R.string.alert_dialog_cancel,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked No so do some stuff */
+			// }
+			// }).create();
+			// case DIALOG_TEXT_ENTRY:
+			// // This example shows how to add a custom layout to an
+			// AlertDialog
+			// LayoutInflater factory = LayoutInflater.from(this);
+			// final View textEntryView = factory.inflate(
+			// R.layout.alert_dialog_text_entry, null);
+			// return new AlertDialog.Builder(AlertDialogSamples.this).setIcon(
+			// R.drawable.alert_dialog_icon).setTitle(
+			// R.string.alert_dialog_text_entry).setView(textEntryView)
+			// .setPositiveButton(R.string.alert_dialog_ok,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked OK so do some stuff */
+			// }
+			// }).setNegativeButton(R.string.alert_dialog_cancel,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked cancel so do some stuff */
+			// }
+			// }).create();
 		}
 		return null;
 	}
