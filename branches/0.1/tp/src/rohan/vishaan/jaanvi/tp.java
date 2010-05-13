@@ -46,9 +46,10 @@ public class tp extends Activity {
 
 	private static int singleImageColumnWidth;
 	private static int singleImageColumnHeight;
+	private GridView g;
 
 	private Config getConfig() {
-		return new Config(6);
+		return new Config(5);
 	}
 
 	private Config config;
@@ -61,7 +62,7 @@ public class tp extends Activity {
 
 		setContentView(R.layout.grid_2);
 
-		GridView g = (GridView) findViewById(R.id.myGrid);
+		g = (GridView) findViewById(R.id.myGrid);
 		g.setBackgroundColor(Color.GRAY);
 
 		DisplayMetrics dm = new DisplayMetrics();
@@ -109,8 +110,11 @@ public class tp extends Activity {
 
 		g.setColumnWidth(singleImageColumnWidth);
 
-		g.setAdapter(new ImageAdapter(this));
+		adapter = new ImageAdapter(this);
+		g.setAdapter(adapter);
 	}
+
+	ImageAdapter adapter;
 
 	public class MyImageView extends ImageView {
 
@@ -165,9 +169,15 @@ public class tp extends Activity {
 
 		public ImageAdapter(tp c) {
 			mContext = c;
-			ShuffleBoard sf = new ShuffleBoard(picturesToMatch, c.getConfig()
-					.getHowManyImages());
+			init();
+		}
+
+		private void init() {
+			ShuffleBoard sf = new ShuffleBoard(picturesToMatch, mContext
+					.getConfig().getHowManyImages());
 			mThumbIdsMatch = sf.shuffle();
+			clickCount = 0;
+			matchCount = 0;
 		}
 
 		public int getCount() {
@@ -226,7 +236,6 @@ public class tp extends Activity {
 						matchCount++;
 						if (matchCount == config.getHowManyImages()) {
 							showDialog(DIALOG_YES_NO_MESSAGE);
-							restart();
 						}
 					} else {
 						iv.openCard();
@@ -237,180 +246,45 @@ public class tp extends Activity {
 								iv.closeCard();
 							}
 
-						}, 2100);
+						}, 1100);
 					}
 				}
 			}
 		}
 
-		private void restart() {
-			Intent intent = mContext.getIntent();
-			startActivity(intent);
-			// finish();
-		}
-
 		private final tp mContext;
 
-		private final Integer[] mThumbIds = { R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard,
-				R.drawable.facecard, R.drawable.facecard, R.drawable.facecard };
-
-		private final Integer[] mThumbIdsMatch;
+		private Integer[] mThumbIdsMatch;
 
 		private final Integer[] picturesToMatch = { R.drawable.snuffy,
 				R.drawable.abby, R.drawable.elmo, R.drawable.cookie_monster,
-				R.drawable.bigbird, R.drawable.zoey, R.drawable.photo2,
-				R.drawable.photo3 };
+				R.drawable.bigbird, R.drawable.zoey };
+	}
 
-		private final Integer hiddenCardId = R.drawable.facecard;
-		// , R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, R.drawable.sample_thumb_0,
-		// R.drawable.sample_thumb_1, R.drawable.sample_thumb_2,
-		// R.drawable.sample_thumb_3, R.drawable.sample_thumb_4,
-		// R.drawable.facecard, R.drawable.sample_thumb_6,
-		// R.drawable.sample_thumb_7, };
+	private void restart() {
+		Intent intent = new Intent();
+		intent.setClass(tp.this, tp.class);
+		startActivity(intent);
+		finish();
 	}
 
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case DIALOG_YES_NO_MESSAGE:
-			return new AlertDialog.Builder(this).setIcon(R.drawable.frog)
+			return new AlertDialog.Builder(this).setIcon(R.drawable.smiley)
 					.setTitle(R.string.alert_dialog_two_buttons_title)
 					.setPositiveButton(R.string.alert_dialog_ok,
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int whichButton) {
-
-									/* User clicked OK so do some stuff */
+									restart();
 								}
 							}).setNegativeButton(R.string.alert_dialog_cancel,
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int whichButton) {
-
-									/* User clicked Cancel so do some stuff */
+									finish();
 								}
 							}).create();
 		case DIALOG_YES_NO_LONG_MESSAGE:
