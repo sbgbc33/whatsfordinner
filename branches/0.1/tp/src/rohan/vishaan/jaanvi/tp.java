@@ -49,7 +49,7 @@ public class tp extends Activity {
 	private GridView g;
 
 	private Config getConfig() {
-		return new Config(5);
+		return new Config(6);
 	}
 
 	private Config config;
@@ -287,33 +287,33 @@ public class tp extends Activity {
 									finish();
 								}
 							}).create();
-		case DIALOG_YES_NO_LONG_MESSAGE:
-			return new AlertDialog.Builder(this).setIcon(R.drawable.frog)
-					.setTitle(R.string.alert_dialog_two_buttons_msg)
-					.setMessage(R.string.alert_dialog_two_buttons2_msg)
-					.setPositiveButton(R.string.alert_dialog_ok,
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int whichButton) {
-
-									/* User clicked OK so do some stuff */
-								}
-							}).setNeutralButton(
-							R.string.alert_dialog_something,
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int whichButton) {
-
-									/* User clicked Something so do some stuff */
-								}
-							}).setNegativeButton(R.string.alert_dialog_cancel,
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int whichButton) {
-
-									/* User clicked Cancel so do some stuff */
-								}
-							}).create();
+			// case DIALOG_YES_NO_LONG_MESSAGE:
+			// return new AlertDialog.Builder(this).setIcon(R.drawable.frog)
+			// .setTitle(R.string.alert_dialog_two_buttons_msg)
+			// .setMessage(R.string.alert_dialog_two_buttons2_msg)
+			// .setPositiveButton(R.string.alert_dialog_ok,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked OK so do some stuff */
+			// }
+			// }).setNeutralButton(
+			// R.string.alert_dialog_something,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked Something so do some stuff */
+			// }
+			// }).setNegativeButton(R.string.alert_dialog_cancel,
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked Cancel so do some stuff */
+			// }
+			// }).create();
 			// case DIALOG_LIST:
 			// return new AlertDialog.Builder(this).setTitle(
 			// R.string.select_dialog).setItems(
@@ -330,29 +330,29 @@ public class tp extends Activity {
 			// + items[which]).show();
 			// }
 			// }).create();
-		case DIALOG_PROGRESS:
-			mProgressDialog = new ProgressDialog(this);
-			mProgressDialog.setIcon(R.drawable.frog);
-			mProgressDialog.setTitle(R.string.select_dialog);
-			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-			mProgressDialog.setMax(MAX_PROGRESS);
-			mProgressDialog.setButton(getText(R.string.alert_dialog_hide),
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
-
-							/* User clicked Yes so do some stuff */
-						}
-					});
-			mProgressDialog.setButton2(getText(R.string.alert_dialog_cancel),
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
-
-							/* User clicked No so do some stuff */
-						}
-					});
-			return mProgressDialog;
+			// case DIALOG_PROGRESS:
+			// mProgressDialog = new ProgressDialog(this);
+			// mProgressDialog.setIcon(R.drawable.frog);
+			// mProgressDialog.setTitle(R.string.select_dialog);
+			// mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			// mProgressDialog.setMax(MAX_PROGRESS);
+			// mProgressDialog.setButton(getText(R.string.alert_dialog_hide),
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked Yes so do some stuff */
+			// }
+			// });
+			// mProgressDialog.setButton2(getText(R.string.alert_dialog_cancel),
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked No so do some stuff */
+			// }
+			// });
+			// return mProgressDialog;
 			// case DIALOG_SINGLE_CHOICE:
 			// return new AlertDialog.Builder(this).setIcon(
 			// R.drawable.alert_dialog_icon).setTitle(
