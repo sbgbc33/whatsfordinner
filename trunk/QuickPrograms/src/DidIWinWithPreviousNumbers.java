@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +90,8 @@ class DidIWinWithPreviousNumbers {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = DidIWin.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -111,7 +113,8 @@ class DidIWinWithPreviousNumbers {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = DidIWin.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -133,7 +136,7 @@ class DidIWinWithPreviousNumbers {
 						+ " winning # are " + winning[0] + "-" + winning[1]
 						+ "-" + winning[2] + "-" + winning[3] + "-"
 						+ winning[4] + "---" + winning[5]);
-				file("c:\\a\\mega2012.csv");
+				file("mega2012.csv");
 			}
 			// Close the input stream
 			in.close();
@@ -147,6 +150,6 @@ class DidIWinWithPreviousNumbers {
 
 	public static void main(String args[]) {
 
-		readWinningNumbers("c:\\a\\pastWinningNumbers.csv");
+		readWinningNumbers("pastWinningNumbers.csv");
 	}
 }

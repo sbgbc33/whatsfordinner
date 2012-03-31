@@ -1,9 +1,8 @@
-
-
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -96,7 +95,8 @@ class FileRead {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = FileRead.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -142,10 +142,7 @@ class FileRead {
 	private static final String URL = "http://www.careerbuilder.com/JobSeeker/Jobs/JobDetails.aspx?ipath=HPRJ&&Job_DID=JHL8996R6CVHSCVYPGN";
 
 	public static void main(String args[]) {
-		// file("E:\\data\\Documents\\tejash documents\\tejash\\j12\\director\\Director QA Sparta Systems.txt");
-//		file("E:\\data\\Documents\\tejash documents\\tejash\\j12\\icims\\manager.txt");
-		file("E:\\data\\Documents\\tejash documents\\tejash\\j8\\dow jones\\758 mgr1.txt");
-		// file("E:\\data\\Documents\\tejash documents\\sparta\\2012\\open positions\\resume.txt");
+		file("mgr1.txt");
 		// readURL();
 
 		print();
