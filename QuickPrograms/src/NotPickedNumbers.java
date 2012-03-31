@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,7 +93,8 @@ class NotPickedNumbers {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = DidIWin.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -114,7 +116,8 @@ class NotPickedNumbers {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = DidIWin.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));

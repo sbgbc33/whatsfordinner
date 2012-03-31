@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,10 +93,12 @@ class DidIWin {
 		if (goldWinner) {
 			switch (winningNumbersFound.size()) {
 			case 4:
-				System.out.println("You won $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000");
+				System.out
+						.println("You won $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000 $10,000");
 				break;
 			case 3:
-				System.out.println("You won $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150");
+				System.out
+						.println("You won $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150 $150");
 				break;
 			case 2:
 				System.out.println("You won $10");
@@ -124,7 +127,8 @@ class DidIWin {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = DidIWin.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -146,7 +150,10 @@ class DidIWin {
 		try {
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream(filename);
+			// String.class.getClassLoader().getResourceAsStream(filename);
+			// FileInputStream fstream = new FileInputStream(filename);
+			InputStream fstream = DidIWin.class.getClassLoader()
+					.getResourceAsStream(filename);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -163,6 +170,7 @@ class DidIWin {
 			in.close();
 		} catch (Exception e) {// Catch exception if any
 			System.err.println("Error: " + e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
@@ -170,7 +178,7 @@ class DidIWin {
 
 	public static void main(String args[]) {
 
-		readWinningNumbers("c:\\a\\winningNumbers.csv");
-		file("c:\\a\\mega2012.csv");
+		readWinningNumbers("winningNumbers.csv");
+		file("mega2012.csv");
 	}
 }
